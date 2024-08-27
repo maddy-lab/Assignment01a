@@ -42,43 +42,30 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.celciusToFarenheat).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 celciusToFahrenheit();
+                String enteredTemp=editTemperature.getText().toString();
+                try{
+                    double celcius=Double.parseDouble(enteredTemp);
+                    double result= (celcius * 9/5) +32;
+                    convertedTemperature.setText(String.format("%.2f F",result));
+                }
+                catch (NumberFormatException exception) {
+                    Toast.makeText(MainActivity.this, "Enter a valid number !!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         findViewById(R.id.farenheatToCelcius).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fahrenheitToCelcius();
+                String enteredTemp=editTemperature.getText().toString();
+                try{
+                    double fahrenheit=Double.parseDouble(enteredTemp);
+                    double result= (fahrenheit - 32)* 5/9;
+                    convertedTemperature.setText(String.format("%.2f C",result));
+                }
+                catch (NumberFormatException exception) {
+                    Toast.makeText(MainActivity.this, "Enter a valid number !!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
-
-
-    }
-    private void celciusToFahrenheit()
-    {
-        String enteredTemp=editTemperature.getText().toString();
-        try{
-            double celcius=Double.parseDouble(enteredTemp);
-            double result= (celcius * 9/5) +32;
-            convertedTemperature.setText(String.format("%.2f F",result));
-        }
-        catch (NumberFormatException exception) {
-        Toast.makeText(MainActivity.this, "Enter a valid number !!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    private void fahrenheitToCelcius()
-    {
-        String enteredTemp=editTemperature.getText().toString();
-        try{
-            double fahrenheit=Double.parseDouble(enteredTemp);
-            double result= (fahrenheit - 32)* 5/9;
-            convertedTemperature.setText(String.format("%.2f C",result));
-        }
-        catch (NumberFormatException exception) {
-            Toast.makeText(MainActivity.this, "Enter a valid number !!", Toast.LENGTH_SHORT).show();
-        }
     }
 }
