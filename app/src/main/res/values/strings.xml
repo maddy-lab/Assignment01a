@@ -2,4 +2,9 @@
     <string name="app_name">Assignment01a</string>
     <string name="temperature">Enter Temperature</string>
     <string name="celciusToFarenheat">CtoF</string>
+    <string name="converted_temp">Conversion :</string>
+    <string name="temp_label">Temperature :</string>
+    <string name="CtoF">C to F</string>
+    <string name="FtoC">F to C</string>
+    <string name="reset">Reset</string>
 </resources>
