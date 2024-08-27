@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Assignment01a</string>
+    <string name="temperature">Enter Temperature</string>
+    <string name="celciusToFarenheat">CtoF</string>
+</resources>
